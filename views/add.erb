@@ -1,0 +1,46 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-8 decalage fenetre">
+    		<div id="formul">
+    		<p class="texte">Ajoutez votre avion :
+    		</p>
+    		<form method="POST" action="/add">
+				<input id="cons" name="constructeur" class="inputp" placeholder="Constructeur">
+				<input id="mod" name="modele" class="inputp" placeholder="Modèle">
+				<input name="equipement" class="inputi" placeholder="Equipement">
+				<textarea name="description" class="inputr" placeholder="Description"></textarea>
+				<input name="image" class="inputi" placeholder="Image(url)">
+			 	<button class="btn btn-info decalage5" type="submit">Ajouter
+			 	</button>
+			</form>
+			<button onclick="crypteur()">crypttest</button>
+			<input id="recept">
+			</div>
+			<button onclick="decrypteur()">decrypttest</button>
+			<div id="kikoo">
+			</div>
+		</div>
+	</div>
+</nav>
+</div>
+<script>
+	function crypteur(){
+		var cons = "c#"+document.getElementById("cons").value
+		var mod = "m#"+document.getElementById("mod").value
+		var datacrypt = cons+mod
+		document.getElementById("recept").value = datacrypt
+	}
+	function decrypteur(){
+		var crypt = document.getElementById("recept").value
+		var constr = crypt.substring(2,crypt.indexOf("m#"))
+		var modetotal = crypt.substring(constr.length+4,crypt.length)
+		var mode = modetotal.split(";")
+		var assemb = ""
+		for (i = 0; i <= mode.length; i++) {
+			fragment = "<option>"+mode[i]+"</option>"
+			assemb += fragment
+		}
+		var impression = "Marque : "+constr+"Modèle : "+"<select>"+assemb+"</select>"
+		document.getElementById("kikoo").innerHTML = impression
+	}
+</script>

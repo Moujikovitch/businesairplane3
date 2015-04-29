@@ -1,0 +1,59 @@
+<div class="container">
+<nav class="navbar navbar-default decalage fenetre">
+    <p class="texte">Choisissez votre avion :</p>
+	<div class="col-md-10">
+        <form class="form-inline">
+            <select id="cons" class="form-control">
+                <option disabled selected>Constructeur</option>
+                <option>Airbus</option>
+                <option>Dassault</option>
+                 <% @datas.each do |t| %>
+                <option><%= t.constructeur  %></option>
+                <% end %>
+            </select>
+            <select name="ModèleD" class="form-control masque" id="Dassault" style="display:none">
+                <option disabled selected>Modèle</option>
+                <option>X7</option>
+                <option>B6</option>
+            </select>
+            <select name="ModèleA" class="form-control masque" id="Airbus" style="display:none">
+                <option disabled selected>Modèle</option>
+                <option>jetv9</option>
+                <option>explorer10</option>
+            </select>
+            <select name="PropulsionD1" class="form-control masque2" id="jetv9" style="display:none">
+                <option disabled selected>Propulsion</option>
+                <option value="coucou">Helice</option>
+                <option>Turbine1</option>
+            </select>
+            <select name="PropulsionD2" class="form-control masque2" id="explorer10" style="display:none">
+                <option disabled selected>Propulsion</option>
+                <option>Helice2</option>
+                <option>Turbine2</option>
+            </select>
+            <select name="PropulsionA1" class="form-control masque2" id="X7" style="display:none">
+                <option disabled selected>Propulsion</option>
+                <option>Helice3</option>
+                <option>Turbine3</option>
+            </select>
+            <select name="PropulsionA2" class="form-control masque2" id="B6" style="display:none">
+                <option disabled selected>Propulsion</option>
+                <option>Helice4</option>
+                <option>Turbine4</option>
+            </select>
+        </form>
+    </div>
+</nav>
+<div class="row decalage50">
+</div>
+	<nav class="navbar navbar-default fenetre masque3" id="coucou" style="display:none">
+		<div class="col-md-10">
+			<img src="media/avion.jpg" class="image"></img>
+			<h3 class="titre">Airbus A-347</h3>
+			<p class="texte">Oui, nous parlons bien de l'Airbus de ligne A-347. Mais sans les passagers, uniquements les hotesses.
+			Les sièges passagers ont été remplacé par une piscine, une salle cinéma, et un opéra. Un habitacle spécial est reservé
+			à l'orchestre chinois (les musiciens chinois prennent moins de place) qui se fera un plaisir de donner une représentation
+			de Wagner pendant vos épuisants voyages vers vos demeures secondaires.</p>
+		</div>
+	</nav>
+</div>
